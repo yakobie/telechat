@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/telechat/static/css/main.cf799e52.css",
-    "main.js": "/telechat/static/js/main.146783f7.js",
+    "main.js": "/telechat/static/js/main.7fbb975e.js",
     "index.html": "/telechat/index.html",
     "main.cf799e52.css.map": "/telechat/static/css/main.cf799e52.css.map",
-    "main.146783f7.js.map": "/telechat/static/js/main.146783f7.js.map"
+    "main.7fbb975e.js.map": "/telechat/static/js/main.7fbb975e.js.map"
   },
   "entrypoints": [
     "static/css/main.cf799e52.css",
-    "static/js/main.146783f7.js"
+    "static/js/main.7fbb975e.js"
   ]
 }
