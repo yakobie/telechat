@@ -62,16 +62,16 @@ const Chat: React.FunctionComponent<IChatProps> = (props) => {
     function messageHandler(message: any) {
         console.log(message);
 
-        if(message.type == "userId") {
+        if(message.type === "userId") {
             setMyId(message.data.userId);
         }
         
-        if(message.type == "sendMessage" && !message.data.isSystemMessage) {  
+        if(message.type === "sendMessage" && !message.data.isSystemMessage) {  
             let msg = (message.data as SessionChatMessage);  
             addToMessages(msg);
         }
 
-        if(message.type == "sendMessage" && message.data.isSystemMessage)
+        if(message.type === "sendMessage" && message.data.isSystemMessage)
         {
             let msg = (message.data as SessionChatMessage);
             switch(msg.body) {
@@ -91,7 +91,7 @@ const Chat: React.FunctionComponent<IChatProps> = (props) => {
             }
         }
 
-        if(message.type == "setTypingPresence") {  
+        if(message.type === "setTypingPresence") {  
             let data = message.data;
 
             if(data.usersTyping.length > 0)
@@ -108,7 +108,7 @@ const Chat: React.FunctionComponent<IChatProps> = (props) => {
             await client.createChatRoom(username).then(setCurrentRoom);
         }
 
-        if(roomToJoin != "" && username != "")
+        if(roomToJoin !== "" && username !== "")
         {
             client.joinChatRoom(username, roomToJoin, avatarUrl)
             .catch((e) => {
@@ -121,7 +121,7 @@ const Chat: React.FunctionComponent<IChatProps> = (props) => {
             setCurrentRoom(roomToJoin);
         } 
 
-        if(roomToJoin == "" && username != "") {
+        if(roomToJoin === "" && username !== "") {
             createRoom();
         }
     }
@@ -180,7 +180,7 @@ const Chat: React.FunctionComponent<IChatProps> = (props) => {
           </div>
 
           <div className='bg-gray-700 h-8 flex flex-row w-full break-words'>
-              {typingUsers.map((value, index) => (<div className='px-1 text-slate-200 text-lg'><h1 key={index}>{value}</h1></div>))}    
+              {typingUsers.map((value, index) => (<div key={index} className='px-1 text-slate-200 text-lg'><h1>{value}</h1></div>))}    
               {typingUsers.length > 0 ? typingUsers.length > 1 ?  (<span className='text-slate-200 text-lg'>are typing</span>) : (<span className='text-slate-200 text-lg'>is typing</span>) : ""}
           </div>
 

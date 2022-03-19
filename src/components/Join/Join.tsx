@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { Link } from "react-router-dom";
 
@@ -47,7 +47,7 @@ const Join: React.FunctionComponent<IJoinProps> = (props) => {
           state={{username: name, roomToJoin: room, avatarUrl: avatar}}
         >
           <button className="mt-5 mb-10 bg-blue-800 py-2 px-6 rounded-lg hover:bg-blue-700" type="submit">
-            {room != "" ? "Join A Room" : "Create A Room"}
+            {room !== "" ? "Join A Room" : "Create A Room"}
           </button>
         </Link>
 
